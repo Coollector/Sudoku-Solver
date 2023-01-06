@@ -50,19 +50,6 @@ def replace_function(ctx:str):
 
 def board_input():
     print('please enter the rows of the sudoku like this: 1, 2, 3, 4, 0(if the field is empty), 5, 6, 7, 8:\n\n')
-    row_1 = replace_function(input())
-    row_2 = replace_function(input())
-    row_3 = replace_function(input())
-    row_4 = replace_function(input())
-    row_5 = replace_function(input())
-    row_6 = replace_function(input())
-    row_7 = replace_function(input())
-    row_8 = replace_function(input())
-    row_9 = replace_function(input())
-    board_prev = [row_1, row_2, row_3, row_4, row_5, row_6, row_7, row_8, row_9]
-    return board_prev
+    return [replace_function(input()) for _ in range(9)]
 
-
-board = board_input()
-
-solution = solve(board)
+solution = solve(board_input())
